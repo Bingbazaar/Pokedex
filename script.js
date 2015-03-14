@@ -21,7 +21,7 @@ $(function(){
       return queryString;
   } ();
   
-  var goButton = document.getElementsByClassName('submit');
+  var goButton = document.getElementById('submit');
   
   goButton.onclick = function(){
     var currentPoke = document.getElementById('poke-input').value;
