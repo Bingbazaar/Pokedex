@@ -22,5 +22,5 @@ var getUrlParams = function (){
 
 var goButton = document.getElementsByClassName('submit');
 goButton.onclick = function(){
-   window.history.pushState({}, "Pokedex", 'file:///C:/Users/Dubsteppers/Documents/GitHub/Pokedex/index.html');
+   window.history.pushState({}, "Pokedex", 'test.html');
 };
