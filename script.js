@@ -20,7 +20,10 @@ var getUrlParams = function (){
     return queryString;
 } ();
 
-var goButton = document.getElementsByClassName('submit');
+var goButton = document.getElementsByClassName('submit'),
+  currentPoke = document.getElementById('poke-input').value;
 goButton.onclick = function(){
-   window.history.pushState({}, "Pokedex", 'test.html');
+  if(!currentPoke.trim().length > 0) {
+      window.history.pushState({}, 'Pokedex', 'http://dubstepper.github.io/Pokedex/?poke=' + currentPoke); 
+  }
 };
