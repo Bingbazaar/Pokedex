@@ -26,7 +26,7 @@ $(function(){
   goButton.onclick = function(){
     var currentPoke = document.getElementById('poke-input').value;
     var newUrl = 'http://dubstepper.github.io/Pokedex/?poke=' + currentPoke;
-    if(!currentPoke.trim().length > 0) {
+    if(currentPoke.trim().length > 0) {
         window.history.pushState({}, 'Pokedex', newUrl); 
     }
   };
