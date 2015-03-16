@@ -4,7 +4,7 @@ body{
 }
 .container{
   display: block;
-  margin: 0 auto;
+  margin: 70px auto;
   width: 1000px;
   text-align: center;
 }

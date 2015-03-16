@@ -40,19 +40,20 @@ $(function(){
     //loading screen
     $('.result').html('<i class="fa fa-spinner"></i>');
 
-    var currentPoke = document.getElementById('poke-input').value,
-      path = 'http://www.pkparaiso.com/imagenes/xy/sprites/animados/' + currentPoke + '.gif';
+    var currentPoke = document.getElementById('poke-input').value;
     var newUrl = 'http://dubstepper.github.io/Pokedex/?poke=' + currentPoke;
     // if(currentPoke.trim().length > 0) {
     //     window.history.pushState({}, 'Pokedex', newUrl);
     // }
     $.getJSON('http://pokeapi.co/api/v1/pokemon/' + currentPoke.toString().toLowerCase()).done(function(result){
+        if(currentPoke == parseInt(currentPoke)) currentPoke = result['name'].toLowerCase();
+        var path = 'http://www.pkparaiso.com/imagenes/xy/sprites/animados/' + currentPoke + '.gif';
+
         $('.intro').html('');
-        $('.poke-name').text('#' + result["national_id"] + ' - ' + result["name"]);
         var abilities = '';
         $('.result').html(
         '<img src="' + path + '">' +
-        '<h1 class="poke-name">' + result["name"] + '</h1>' + 
+        '<h1 class="poke-name">#' + result["national_id"] + ' - ' + result["name"] + '</h1>' +
         'poke poke-'
         );
     }).fail(function(){
