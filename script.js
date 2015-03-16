@@ -46,16 +46,14 @@ $(function(){
     // if(currentPoke.trim().length > 0) {
     //     window.history.pushState({}, 'Pokedex', newUrl);
     // }
-    $.getJSON('http://pokeapi.co/api/v1/pokemon/' + currentPoke.toString().toLowerCase(), function(result){
-      if(result.length > 0){
+    $.getJSON('http://pokeapi.co/api/v1/pokemon/' + currentPoke.toString().toLowerCase()).done(function(){
         $('.intro').html('');
         $('.poke-name').text(result["name"]);
         $('.result').html(
         '<img src="' + path + '">' +
         '<h1 class="poke-name">' + result["name"] + '</h1>');
-      } else {
-        $('.result').html('<h1 class="poke-name">Sorry, we couldn\'t find that Pokémon.</h1>');
-      }
+    }).fail(function(){
+      $('.info').html('<h1 class="poke-name">Sorry, we couldn\'t fetch that Poke :(</h1>');
     });
   };
 
