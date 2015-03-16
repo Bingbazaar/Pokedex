@@ -49,6 +49,7 @@ $(function(){
     $.getJSON('http://pokeapi.co/api/v1/pokemon/' + currentPoke.toString().toLowerCase()).done(function(result){
         $('.intro').html('');
         $('.poke-name').text('#' + result["national_id"] + ' - ' + result["name"]);
+        var abilities = '';
         $('.result').html(
         '<img src="' + path + '">' +
         '<h1 class="poke-name">' + result["name"] + '</h1>' + 
