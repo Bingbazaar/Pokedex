@@ -12,3 +12,16 @@ body{
 p.desc {
   font-size: 30px;
 }
+
+.fa-spinner{
+  -webkit-animation: fa-spinner .2s linear infinite;
+}
+
+footer{
+  text-align: center;
+}
+
+.result {
+  padding: 13px;
+  margin: 20px;
+}

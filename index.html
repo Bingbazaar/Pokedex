@@ -3,19 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Pokedex</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="script.js"></script>
 </head>
 <body>
   <div class="container">
-    <div class="intro">
-    <h1 class="title">What's this?</h1>
-    <p class="desc">I'm gonna try using JavaScript to make a site where you can get Pokemon info and hopefully a cool Pokédex :)</p>
-  </div>
     <label for="poke-input">Pokémon: </label>
     <input type="text" class="pokemon-input" id="poke-input">
     <button class="submit" id="submit">Go!</button>
+
+    <div class="result"></div>
+
+    <div class="intro">
+      <h1 class="title">What's this?</h1>
+      <p class="desc">I'm gonna try using JavaScript to make a site where you can get Pokemon info and hopefully a cool Pokédex :)</p>
+    </div>
   </div>
+  <footer>
+    <p class="info">Credits to <a href="http://www.pkparaiso.com/">pkparaiso.com</a> for the sprites!</p>
+  </footer>
 </body>
 </html>
