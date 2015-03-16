@@ -48,10 +48,12 @@ $(function(){
     // }
     $.getJSON('http://pokeapi.co/api/v1/pokemon/' + currentPoke.toString().toLowerCase()).done(function(result){
         $('.intro').html('');
-        $('.poke-name').text(result["name"]);
+        $('.poke-name').text('#' + result["national_id"] + ' - ' + result["name"]);
         $('.result').html(
         '<img src="' + path + '">' +
-        '<h1 class="poke-name">' + result["name"] + '</h1>');
+        '<h1 class="poke-name">' + result["name"] + '</h1>' + 
+        'poke poke-'
+        );
     }).fail(function(){
       $('.result').html('<h1 class="poke-name">Sorry, we couldn\'t find that Poke :(</h1>');
     });
