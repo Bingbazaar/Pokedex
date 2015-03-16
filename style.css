@@ -14,7 +14,8 @@ p.desc {
 }
 
 .fa-spinner{
-  -webkit-animation: fa-spinner .2s linear infinite;
+  -webkit-animation: fa-spin 2s linear infinite;
+  font-size: 40px;
 }
 
 footer{
