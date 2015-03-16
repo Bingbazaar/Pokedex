@@ -41,7 +41,7 @@ $(function(){
     $('.result').html('<i class="fa fa-spinner"></i>');
 
     var currentPoke = document.getElementById('poke-input').value,
-      path = './img/' + currentPoke + '.gif';
+      path = 'http://www.pkparaiso.com/imagenes/xy/sprites/animados/' + currentPoke + '.gif';
     var newUrl = 'http://dubstepper.github.io/Pokedex/?poke=' + currentPoke;
     // if(currentPoke.trim().length > 0) {
     //     window.history.pushState({}, 'Pokedex', newUrl);
