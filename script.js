@@ -46,7 +46,7 @@ $(function(){
     // if(currentPoke.trim().length > 0) {
     //     window.history.pushState({}, 'Pokedex', newUrl);
     // }
-    $.getJSON('http://pokeapi.co/api/v1/pokemon/' + currentPoke.toString().toLowerCase()).done(function(){
+    $.getJSON('http://pokeapi.co/api/v1/pokemon/' + currentPoke.toString().toLowerCase()).done(function(result){
         $('.intro').html('');
         $('.poke-name').text(result["name"]);
         $('.result').html(
