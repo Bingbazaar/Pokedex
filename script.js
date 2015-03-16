@@ -53,7 +53,7 @@ $(function(){
         '<img src="' + path + '">' +
         '<h1 class="poke-name">' + result["name"] + '</h1>');
     }).fail(function(){
-      $('.result').html('<h1 class="poke-name">Sorry, we couldn\'t fetch that Poke :(</h1>');
+      $('.result').html('<h1 class="poke-name">Sorry, we couldn\'t find that Poke :(</h1>');
     });
   };
 
