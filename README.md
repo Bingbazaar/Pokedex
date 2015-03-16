@@ -1,2 +1,2 @@
 # Pokedex
-A baisc Pokedex using JavaScript :)
+A basic Pokedex using JavaScript :)
