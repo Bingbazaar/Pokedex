@@ -47,11 +47,17 @@ $(function(){
 
   goButton.onclick = function(){
 
-    //loading screen
-    $('.result').html('<i class="fa fa-spinner"></i>');
-
     var currentPoke = document.getElementById('poke-input').value;
     var newUrl = 'http://dubstepper.github.io/Pokedex/?poke=' + currentPoke;
+
+
+    //loading screen
+    if(currentPoke.trim().length > 0){
+      $('.result').html('<i class="fa fa-spinner"></i>');
+    } else {
+      return false;
+    }
+
     // if(currentPoke.trim().length > 0) {
     //     window.history.pushState({}, 'Pokedex', newUrl);
     // }
