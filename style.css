@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:300);
+@import url(http://fonts.googleapis.com/css?family=Raleway:700,300);
 body{
   font-family: 'Raleway', sans-serif;
 }
@@ -25,4 +25,104 @@ footer{
 .result {
   padding: 13px;
   margin: 20px;
+}
+
+button#submit {
+  height: 50px;
+  width: 100px;
+  border-radius: 5px;
+  /* background: radial-gradient(#FF2C8C, #F41469); */
+  background: #FF2477;
+  color: white;
+  border: none;
+  border-bottom: 3px solid #EC0059;
+  font-size: 27px;
+  cursor: pointer;
+  outline: none;
+  padding: 10px;
+  transition: width .2s ease, transform 1s ease;
+}
+
+input#poke-input {
+  font-family: 'Raleway';
+  padding: 10px;
+  font-size: 27px;
+  width: 317px;
+  outline-color: #9522FF;
+}
+
+h1.poke-name {
+  font-weight: normal;
+}
+
+p.stats {
+  font-size: 1.15em;
+  margin: 10px;
+}
+
+.modal-container{
+  position: fixed;
+  background: radial-gradient(#222, #131313);
+  color: white;
+  left: 50%;
+  padding: 20px;
+  border-radius: 10px;
+  transform: translate(-50%, -200%);
+  width: 70%;
+  max-width: 400px;
+  height: 300px;
+  transition: transform 400ms ease-out;
+  text-align: center;
+}
+
+.modal:before{
+  content: "";
+  position: fixed;
+  display: none;
+  background-color: rgba(0,0,0,.8);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.modal:target:before{
+  display: block;
+}
+
+.modal:target .modal-container{
+  transform: translate(-50%, 0);
+}
+
+p.text {
+  margin-top: 0;
+}
+
+p.info {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+#modal-close {}
+
+a {
+  text-decoration: none;
+  color: rgb(255, 112, 177);
+}
+
+button.classic {
+  height: 45px;
+  width: 110px;
+  font-size: 20px;
+  padding: 10px;
+  color: rgb(180, 86, 255);
+  text-shadow: 0 0 10px #B500FF;
+  background-color: #333;
+  border: none;
+  border-bottom: 3px solid #2C2C2C;
+  transition: transform 400ms ease-out;
+}
+
+button#submit:focus {
+  transform: none;
 }

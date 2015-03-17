@@ -35,6 +35,16 @@ $(function(){
 
     }
 
+    $('#submit').click(function(){
+      if($(this).css('transform') == 'none'){
+        $(this).css('transform', 'perspective(150px) rotateX(360deg) rotateZ(360deg)');
+        // $(this).css('width', '150px');
+      } else {
+        $(this).css('transform', '');
+        // $(this).css('width', '100px');
+      }
+    });
+
   goButton.onclick = function(){
 
     //loading screen
@@ -47,15 +57,22 @@ $(function(){
     // }
     $.getJSON('http://pokeapi.co/api/v1/pokemon/' + currentPoke.toString().toLowerCase()).done(function(result){
         if(currentPoke == parseInt(currentPoke)) currentPoke = result['name'].toLowerCase();
-        var path = 'http://www.pkparaiso.com/imagenes/xy/sprites/animados/' + currentPoke + '.gif';
+        var path = 'http://www.pkparaiso.com/imagenes/xy/sprites/animados/' + currentPoke.toLowerCase() + '.gif';
+        if(currentPoke.length > 0){
+          $('.intro').html('');
+          var abilities = '';
+          $('.result').html(
+          '<img src="' + path + '">' +
+          '<h1 class="poke-name">#' + result["national_id"] + ' - ' + result["name"] + '</h1>' +
+          '<p class="stats">HP: ' + result["hp"] + '</p>' +
+          '<p class="stats">Attack: ' + result["attack"] + '</p>' +
+          '<p class="stats">Defense: ' + result["defense"] + '</p>' +
+          '<p class="stats">Sp. Atk: ' + result["sp_atk"] + '</p>' +
+          '<p class="stats">Sp. Def: ' + result["sp_def"] + '</p>' +
+          '<p class="stats">Speed: ' + result["speed"] + '</p>'
+          );
+        }
 
-        $('.intro').html('');
-        var abilities = '';
-        $('.result').html(
-        '<img src="' + path + '">' +
-        '<h1 class="poke-name">#' + result["national_id"] + ' - ' + result["name"] + '</h1>' +
-        'poke poke-'
-        );
     }).fail(function(){
       $('.result').html('<h1 class="poke-name">Sorry, we couldn\'t find that Poke :(</h1>');
     });
