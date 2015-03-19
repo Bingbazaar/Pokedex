@@ -117,11 +117,11 @@ button.classic {
   width: 110px;
   font-size: 20px;
   padding: 10px;
-  color: rgb(180, 86, 255);
-  text-shadow: 0 0 10px #B500FF;
-  background-color: #333;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 10px #D276FF;
+  background-color: #B241FF;
   border: none;
-  border-bottom: 3px solid #2C2C2C;
+  border-bottom: 3px solid #8821F7;
   transition: transform 400ms ease-out;
   margin-top: 20px;
 }
