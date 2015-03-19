@@ -35,6 +35,18 @@ $(function(){
 
     }
 
+    var currentPoke = document.getElementById('poke-input').value.toString().toLowerCase();
+
+    $(document).on('click', '#share-link', function(){
+      if(currentPoke.length){
+        var newUrl = 'http://dubstepper.github.io/Pokedex/?poke=' + currentPoke;
+      } else {
+        var newUrl = 'http://dubstepper.github.io/Pokedex/';
+      }
+      $('.copy').val(newUrl);
+      $('.copy').select();
+    });
+
     $('#submit').click(function(){
       if($(this).css('transform') == 'none'){
         $(this).css('transform', 'perspective(150px) rotateX(360deg) rotateZ(360deg)');
@@ -45,11 +57,19 @@ $(function(){
       }
     });
 
-  goButton.onclick = function(){
+    document.getElementById('body').onload = function(){
+        goButton.click();
+        $('#poke-input').focus();
+    };
 
-    var currentPoke = document.getElementById('poke-input').value;
-    var newUrl = 'http://dubstepper.github.io/Pokedex/?poke=' + currentPoke;
+    goButton.onclick = function(){
 
+      currentPoke = document.getElementById('poke-input').value.toString().toLowerCase();
+      if(queryString["poke"]) var urlPoke = queryString["poke"].toString().toLowerCase();
+
+      if(!currentPoke && urlPoke) currentPoke = urlPoke;
+
+    if(queryString["poke"] == undefined && currentPoke.length == 0) return false;
 
     //loading screen
     if(currentPoke.trim().length > 0){

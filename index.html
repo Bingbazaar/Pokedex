@@ -3,19 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Pokedex</title>
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="script.js"></script>
 </head>
-<body onload="$('#poke-input').focus();">
-
+<body id="body">
+  <!-- credits -->
   <div class="modal" id="cats">
     <div class="modal-container">
         <p class="info">Credits</p>
           <p class="text"><a href="http://pokeapi.co/">pokeapi.co</a> for Pokémon data!</p>
           <p class="text"><a href="http://www.pkparaiso.com/">pkparaiso.com</a> for the sprites!</p>
           <a href="#modal-close"><button class="classic" id="awesome">Awesome</button></a>
+      </div>
+  </div>
+  <!-- share -->
+  <div class="modal" id="share">
+    <div class="modal-container">
+        <p class="info">Text selected. Press Ctrl/Cmd + C to copy!</p>
+          <input type="text" class="copy" onclick="this.select();"><br>
+          <a href="#modal-close"><button class="classic">Close</button></a>
       </div>
   </div>
 
@@ -34,6 +42,7 @@
 
   <footer>
     <a href="#cats"><button class="classic">Credits</button></a>
+    <a href="#share" id="share-link"><button class="classic" id="share-button">Share this Pokémon!</button></a>
   </footer>
 </body>
 </html>
