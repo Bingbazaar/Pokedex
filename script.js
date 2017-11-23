@@ -81,7 +81,7 @@ $(function(){
     // if(currentPoke.trim().length > 0) {
     //     window.history.pushState({}, 'Pokedex', newUrl);
     // }
-    $.getJSON('http://pokeapi.co/api/v1/pokemon/' + currentPoke.toString().toLowerCase()).done(function(result){
+    $.getJSON('http://pokeapi.co/api/v2/pokemon/' + currentPoke.toString().toLowerCase()).done(function(result){
         if(currentPoke == parseInt(currentPoke)) currentPoke = result['name'].toLowerCase();
         var path = 'http://www.pkparaiso.com/imagenes/xy/sprites/animados/' + currentPoke.toLowerCase() + '.gif';
         if(currentPoke.length > 0){
