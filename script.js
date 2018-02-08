@@ -97,6 +97,15 @@ $(function(){
           '<p class="stats">Sp. Def: ' + result["sp_def"] + '</p>' +
           '<p class="stats">Speed: ' + result["speed"] + '</p>'
           );
+          if(result.types[1].name !== undefined){
+            $('.info').html(
+              '<p>Types: ' + result.types[0].name + '/' + result.types[1].name + '</p>'
+              );
+          } else {
+            $('.info').html(
+              '<p>Type: ' + result.types[0].name + '</p>'
+              );
+          }
         }
 
     }).fail(function(){
